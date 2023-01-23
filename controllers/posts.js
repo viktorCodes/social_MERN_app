@@ -1,5 +1,5 @@
-import User from "../models/User";
-import Post from "/models/Post.js";
+import User from "../models/User.js";
+import Post from "../models/Post.js";
 
 /* CREATE */
 
@@ -98,12 +98,12 @@ export const likePost = async (req, res) => {
             new: true
         }
        )
-
-        res.status(200).json(updatedPost);
+           
+       res.status(200).json(updatedPost);
         
     } catch (err) {
         
         
         res.status(404).json({ message: err.message});
     }
-}
+};
