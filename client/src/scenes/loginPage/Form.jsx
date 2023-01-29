@@ -12,9 +12,9 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setLogin } from "state";
 import Dropzone from "react-dropzone";
-import FlexBetween from "components/FlexBetween";
+import FlexBetween from  "../../components/FlexBetween"
+import {setLogin} from "../../state";
 
 const registerSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -64,7 +64,7 @@ const Form = () => {
     formData.append("picturePath", values.picture.name);
 
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "http://localhost:4001/auth/register",
       {
         method: "POST",
         body: formData,
@@ -272,4 +272,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+   export default Form;
